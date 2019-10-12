@@ -7,6 +7,10 @@ import fastClick from 'fastclick'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
+import 'styles/iconfont/iconfont.eot'
+import 'styles/iconfont/iconfont.svg'
+import 'styles/iconfont/iconfont.ttf'
+import 'styles/iconfont/iconfont.woff'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body);

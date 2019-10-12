@@ -1,15 +1,15 @@
 <template>
   <div class="header">
       <div class="header-back">
-        <span class="iconfont">&#xe624;</span>
+        <span class="iconfont">&#xe6db;</span>
       </div>
       <div class="header-search">
-        <span class="iconfont">&#xe632;</span>        
+        <span class="iconfont">&#xe6e1;</span>        
         输入城市/景点/游玩主题
         </div>
       <div class="header-city">
         城市
-        <span class="iconfont arow-down">&#xe64a;</span>                
+        <span class="iconfont arow-down">&#xe600;</span>                
       </div>
   </div>
 </template>

@@ -1,7 +1,6 @@
-﻿# travel 去哪儿网
+﻿# travel 去哪儿网 --vue项目重构，解决方案，传至开发分支，合并主分支
 
 # localhost:8080/
-> A Vue.js project
 
 ## Build Setup
 
@@ -32,6 +31,5 @@ npm run e2e
 
 # run all tests
 npm test
-```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

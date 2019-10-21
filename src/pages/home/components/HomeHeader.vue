@@ -7,10 +7,11 @@
         <span class="iconfont">&#xe6e1;</span>        
         输入城市/景点/游玩主题
         </div>
-      <div class="header-city">
+      <router-link to="/city"><div class="header-city">
         城市
         <span class="iconfont arow-down">&#xe600;</span>                
       </div>
+      </router-link>
   </div>
 </template>
 
@@ -50,6 +51,7 @@ export default {
         padding-left:.2rem;
     }
       .header-city{
+        color:#fff;
         float:right;
         width:1.24rem;
         text-align:center;

@@ -11,13 +11,14 @@ import 'styles/iconfont/iconfont.eot'
 import 'styles/iconfont/iconfont.svg'
 import 'styles/iconfont/iconfont.ttf'
 import 'styles/iconfont/iconfont.woff'
-
+import store from './store/store';
 Vue.config.productionTip = false
 fastClick.attach(document.body);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -1,11 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import action from './action'
+import getters from './getters'
+import mutation from './mutation'
+import state from './state'
 
 Vue.use(Vuex)
 
-const state = {
-    count: 0
-}
 export default new Vuex.Store({
-    state
+    state,
+    action,
+    mutation,
+    getters
 })

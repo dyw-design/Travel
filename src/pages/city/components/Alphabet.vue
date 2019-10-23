@@ -6,6 +6,9 @@
       :key="item"
       :ref="item"
       @click="handleLetterClick"
+      @touchstart="handletouchstart" 
+      @touchmove="handletouchmove" 
+      @touchend="handletouchend" 
     >
       {{item}}
     </li>
@@ -20,11 +23,18 @@ export default {
   },
   computed: {
     letters () {
-      const letters = []
-      for (let i in this.cities) {
-        letters.push(i)
-      }
-      return letters
+    //   const letters = []
+    //   for (let i in this.cities) {
+    //     letters.push(i)
+    //   }
+    //   return letters
+    // }
+    const letters = [];
+    for(let i in this.cities){
+      console.log(i);
+      letters.push(i)
+    }
+    return letters;
     }
   },
   data () {
@@ -34,13 +44,27 @@ export default {
       timer: null
     }
   },
-  updated () {
-    this.startY = this.$refs['A'][0].offsetTop
-  },
   methods: {
     handleLetterClick (e) {
       // console.log(e.target.innerText);
       this.$emit('change', e.target.innerText)
+    },
+    handletouchstart(){
+      this.touchStatus = true;
+    },
+    handletouchmove(e){
+      //此处需要优化
+      if(this.touchStatus){
+          let scrollTop = this.$refs['A'][0].offsetTop;
+          let touchY = e.touches[0].clientY - 79;
+          let index = Math.floor((touchY - scrollTop) / 20);
+          if(index >= 0 && index < this.letters.length){
+            this.$emit('change',this.letters[index]); 
+          }
+      }
+    },
+    handletouchend(){
+
     }
   }
 }

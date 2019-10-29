@@ -33,9 +33,12 @@ export default {
   data () {
     return {
       touchStatus: false,
-      startY: 0,
+      scrollTop:0,
       timer: null
     }
+  },
+  updated(){
+    let scrollTop = this.$refs['A'][0].offsetTop;
   },
   methods: {
     handleLetterClick (e) {
@@ -48,12 +51,16 @@ export default {
     handletouchmove(e){
       //此处需要优化
       if(this.touchStatus){
-          let scrollTop = this.$refs['A'][0].offsetTop;
+        if(this.timer){
+          clearTimeout(this.timer)
+        }
+        this.timer = setTimeout(() => {
           let touchY = e.touches[0].clientY - 79;
-          let index = Math.floor((touchY - scrollTop) / 20);
+          let index = Math.floor((touchY - this.scrollTop) / 20);
           if(index >= 0 && index < this.letters.length){
             this.$emit('change',this.letters[index]); 
           }
+        },16);
       }
     },
     handletouchend(){

@@ -23,15 +23,8 @@ export default {
   },
   computed: {
     letters () {
-    //   const letters = []
-    //   for (let i in this.cities) {
-    //     letters.push(i)
-    //   }
-    //   return letters
-    // }
     const letters = [];
     for(let i in this.cities){
-      console.log(i);
       letters.push(i)
     }
     return letters;
